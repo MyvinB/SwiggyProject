@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>FoodForLife</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+h1 {
+	color: FireBrick;
+}
+
+.menu-item {
+	height: 200px
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+		<div class="jumbotron text-center">
+			<h1>Eat till you die</h1>
+			<p>ORDER FROM PANDA YOU WONT STOP</p>
+			<div *ngIf="cartThere"><a routerLink="/link">Cart</a></div>
+		</div>
+
+	
+		<div class="row">
+
+			<div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let fd of food">
+				<div  class="card mt-3">
+					<img src="./assets/img/{{fd.path}}" class="card-img-top menu-item"
+						alt="Card image">
+					<div class="card-body">
+						<h5 class="card-title">{{fd.name}}</h5>
+
+						<p class="card-text">&#x20b9;{{fd.amt}}</p>
+					</div>
+					<div class="card-footer">
+						<div *ngIf="fd.qnt!=0"  class="input-group">
+					
+							<!-- <input ng-model="qnt" #num type="number"  name="qnt"/> -->
+							<button class="btn btn-primary" 
+								(click)="OnAddToCart(fd,1)">AddToCart</button>
+						</div>
+						<div *ngIf="fd.qnt==0"  class="input-group">
+					
+							<!-- <input ng-model="qnt" #num type="number"  name="qnt"/> -->
+							<button disabled class="btn btn-primary" >OutOfStock</button>
+								
+						</div>
+						<p class="card-text">
+							<small class="text-muted">Available Quantity {{fd.qnt}}</small>
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	
+	</div>
+
+	
+
+</body>
+</html>

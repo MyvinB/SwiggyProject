@@ -1,0 +1,83 @@
+
+
+        <div class="container">
+
+                <div class="row justify-content-md-centre" id="first">
+            
+                    <div class=" col-12 col-md-12" style="margin-top: 20px">
+            
+                        <div class="card shadow p-3 mb-5 bg-white rounded mt-5">
+            
+                            <div class="card" id="yourcart">
+            
+                                <h1 id="cartHead" align="center">Your Cart</h1>
+            
+                            </div>
+            
+                            <div class="card-body">
+            
+                            
+                                <div  *ngFor="let fd of food">
+            
+                                    <div class="col-12 col-lg-12">
+            
+                                       
+            
+                                                <div class="row">
+            
+                                                    <div class="col-8 col-lg-10">
+            
+                                                        <b>{{fd.foodName}}</b> 
+                                                            <div class="row">
+                                                            <button id="myButton" type="submit"  (click)="minus(fd)" color="primary" >-</button>
+                                                            <!-- <input [(ngModel)]="fd.qnt" #num type="text" name='quantity'   /> -->
+                                                            <p>&nbsp; {{fd.qnt}} &nbsp;</p>
+                                                            <button id="myButton" type="submit"  (click)="plus(fd)" color="primary" >+</button>
+                                                        </div>
+                                                </div>
+                                                    <div class="col-4 col-lg-2">
+            
+                                                        <b>Rs. {{fd.cost}}</b>
+                                                       
+            
+                                                    </div>
+            
+                                                </div>
+                                           
+            
+            
+                                            
+            
+                                    </div>
+                                    <hr>
+                                </div>
+                        
+            
+                                    <div class="row">
+            
+                                        <div class="col-8 col-lg-10">
+            
+                                            <strong class="total ml-4">Total Rs. {{cart.totalCost}}</strong>
+            
+                                        </div>
+            
+                                        <div class="col-4 col-lg-2">
+            
+                                            <button (click)="pay()" class="btn btn-primary">Pay</button>
+            
+                                        </div>
+            
+                                    </div>
+            
+                           
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+            </div>
+            
+
